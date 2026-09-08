@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/mark-pro');
+@custom-variant dark (&:where(.dark, .dark *));
 @import "tailwindcss";
 
 :root {
@@ -8,8 +10,20 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Mark Pro', sans-serif;
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom primary palette based on user request */
+  --color-primary-50: #fbf5f5;
+  --color-primary-100: #f4e5e5;
+  --color-primary-200: #e5c2c2;
+  --color-primary-300: #d19494;
+  --color-primary-400: #7e7cee;
+  --color-primary-500: #701c1c;
+  --color-primary-600: #5c1616;
+  --color-primary-700: #4a1212;
+  --color-primary-800: #380d0d;
+  --color-primary-900: #260808;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +36,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Mark Pro', sans-serif;
 }
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
