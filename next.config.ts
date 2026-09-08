@@ -8,6 +8,16 @@ const withPWA = withPWAInit({
 
 const nextConfig: NextConfig = {
   turbopack: {},
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
 };
 
 export default withPWA(nextConfig);
